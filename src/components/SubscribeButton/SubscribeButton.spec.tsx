@@ -1,8 +1,8 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { mocked } from 'ts-jest/utils'
+import { mocked } from 'ts-jest/utils';
 import { signIn, useSession } from 'next-auth/client';
 import { useRouter } from 'next/router';
-import { SubscribeButton } from '.'
+import { SubscribeButton } from '.';
 
 jest.mock('next-auth/client');
 
