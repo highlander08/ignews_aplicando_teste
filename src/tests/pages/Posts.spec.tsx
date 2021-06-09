@@ -3,17 +3,20 @@ import { mocked } from 'ts-jest/utils';
 import Posts, { getStaticProps } from '../../pages/posts';
 import { getPrismicClient } from '../../services/prismic';
 
-const posts = [
-    { slug: 'my-new-post', title: 'my new Post', excerpt: 'Post excerpt', updateAt: '01 de Abril'}
-];
+const posts = [{ 
+    slug:'my-new-post',
+    title: 'my new post',
+    excerpt: 'Post excerpt',
+    updateAt: '01 de Abril'
+}];
 
 jest.mock('../../services/prismic')
 
-describe('Post Page', () => {
+describe('Posts Page', () => {
     it('renders correctly', () => {
         render(<Posts posts={posts} />)
 
-        expect(screen.getByText("my new Post")).toBeInTheDocument()
+        expect(screen.getByText("my new post")).toBeInTheDocument()
     });
 
    it('loads initial data', async() => {
@@ -45,12 +48,12 @@ describe('Post Page', () => {
                 props: {
                     posts: [{
                         slug: 'my-new-post',
-                        title: 'my new Post',
+                        title: 'my new post',
                         excerpt: 'Post excerpt',
                         updateAt: '01 de abril de 2021'
                     }]
                 }
             })
         )
-    })
+    }) 
 })
